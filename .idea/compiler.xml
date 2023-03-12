@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="home-control-app" />
+        <module name="noise-generator" />
+        <module name="boiler-control" />
+        <module name="ac-control" />
+        <module name="balcony-power-plant" />
+        <module name="timer-bean" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
