@@ -6,11 +6,8 @@ import de.articdive.jnoise.modules.octavation.fractal_functions.*;
 import de.articdive.jnoise.pipeline.*;
 import swt.noise.generator.*;
 
-import java.util.*;
-
 public class NoiseApiImpl implements NoiseApi {
-  private double counter;
-  private static final int SEED =3301;
+  private static final int SEED = 3301;
 
   /*
   alternative:
@@ -27,12 +24,12 @@ public class NoiseApiImpl implements NoiseApi {
   public double noise(double min, double max) {
     //gives me best values in range
     JNoise noiseGenerator = JNoise.newBuilder()
-      .perlin(3301, Interpolation.COSINE, FadeFunction.IMPROVED_PERLIN_NOISE)
+      .perlin(SEED, Interpolation.COSINE, FadeFunction.IMPROVED_PERLIN_NOISE)
       .addModifier(v -> (v + 1) / 2.0 * (max - min) + min)
       .octavate(2, 1.55, 1.0, FractalFunction.FBM, false) //gives me best values in range
       .build();
 
-    return noiseGenerator.evaluateNoise(Math.random() * 3301);
+    return noiseGenerator.evaluateNoise(Math.random() * SEED);
   }
 
   //https://stackoverflow.com/questions/17134839/how-does-the-map-function-in-processing-work

@@ -1,11 +1,14 @@
 package swt.electric.boiler.impl;
 
+import org.slf4j.*;
 import swt.electric.boiler.*;
 import swt.noise.generator.*;
 
 import java.util.*;
 
 public class ElectricBoilerApiImpl implements ElectricBoilerApi {
+  private static final Logger LOGGER = LoggerFactory.getLogger(ElectricBoilerApiImpl.class);
+
   private boolean running;
   private final NoiseApi noiseApi;
 
@@ -19,11 +22,11 @@ public class ElectricBoilerApiImpl implements ElectricBoilerApi {
   @Override
   public void turnOn() {
     if (this.running) {
-      System.out.println("Boiler already running");
+      LOGGER.debug("Boiler already running");
       return;
     }
     this.running = true;
-    System.out.println("Switched boiler on");
+    LOGGER.info("Switched boiler on");
   }
 
   @Override

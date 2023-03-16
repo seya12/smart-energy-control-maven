@@ -8,6 +8,7 @@ module swt.home.control.app {
   requires swt.balcony.powerplant;
   requires swt.ac.control;
   requires swt.electric.boiler;
+  requires org.slf4j;
 
   uses TimerProvider;
   uses InverterApiProvider;

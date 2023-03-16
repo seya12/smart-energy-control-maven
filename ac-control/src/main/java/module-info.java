@@ -5,6 +5,7 @@ import swt.noise.generator.*;
 module swt.ac.control {
   requires swt.noise.generator;
   uses NoiseApiProvider;
+  requires org.slf4j;
 
   exports swt.ac.control;
   provides AirConditionApiProvider with AirConditionApiProviderImpl;

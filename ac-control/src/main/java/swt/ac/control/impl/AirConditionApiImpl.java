@@ -1,11 +1,14 @@
 package swt.ac.control.impl;
 
+import org.slf4j.*;
 import swt.ac.control.*;
 import swt.noise.generator.*;
 
 import java.util.*;
 
 public class AirConditionApiImpl implements AirConditionApi {
+  private static final Logger LOGGER = LoggerFactory.getLogger(AirConditionApiImpl.class);
+
   private boolean running = false;
   private final NoiseApi noiseApi;
 
@@ -19,21 +22,21 @@ public class AirConditionApiImpl implements AirConditionApi {
   @Override
   public void turnOn() {
     if (this.running) {
-      System.out.println("AC already running");
+      LOGGER.debug("AC already running");
       return;
     }
     this.running = true;
-    System.out.println("Switched AC on");
+    LOGGER.info("Switched AC on");
   }
 
   @Override
   public void turnOff() {
     if (!this.running) {
-      System.out.println("AC already switched off");
+      LOGGER.debug("AC already switched off");
       return;
     }
     this.running = false;
-    System.out.println("Switched AC off");
+    LOGGER.info("Switched AC off");
   }
 
   @Override
